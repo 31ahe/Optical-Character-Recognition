@@ -1,4 +1,3 @@
-import config as cfg
 from torch import nn
 import torch
 
@@ -8,7 +7,7 @@ class feature_extractor(nn.Module):
         super(feature_extractor, self).__init__()
 
         self.feature_extractor = nn.Sequential(
-            nn.Conv2d(cfg.in_channels, 32, kernel_size=3, padding=1),
+            nn.Conv2d(1, 32, kernel_size=3, padding=1),
             nn.ReLU(True),
             nn.Conv2d(32, 64, kernel_size=3, stride=1, padding=1),
             nn.BatchNorm2d(64),
@@ -39,15 +38,3 @@ class feature_extractor(nn.Module):
     def forward(self, x):
         x = torch.permute(self.feature_extractor(x), [0,2,1])
         return x
-    
-
-# batch_size = 16  
-
-# test = feature_extractor(3).to(device) 
-
-# item = torch.randn((batch_size, 1, 64, 192)).to(device)
-
-# item2 = test(item)
-# print("Output shape:", item2.shape)
-
-# torchsummary.summary(test, (1, 64, 192), batch_size)

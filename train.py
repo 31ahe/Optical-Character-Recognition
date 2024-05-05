@@ -1,10 +1,10 @@
-from data_loader import CustomDataset, normalization
+from Utils.data_loader import CustomDataset, normalization
 from torchvision.transforms import Compose, Resize
-from label_converter import CTCLabelConverter
-from _utils import loss_curve, print_params
+from Utils.label_converter import CTCLabelConverter
+from Utils._utils import loss_curve
 from torch.utils.data import DataLoader
 from train_func import train, test
-from model import OCR_Model
+from Modules.model import OCR_Model
 from torch import nn
 import config as cfg
 import torch
@@ -34,7 +34,6 @@ converter = CTCLabelConverter(cfg.unique_chars, cfg.device)
 
 model = OCR_Model(len(cfg.unique_chars)).to(cfg.device)
 
-# print_params(model)
 
 optimizer = torch.optim.Adam(model.parameters(), cfg.learning_rate)
 loss_fn = nn.CTCLoss(zero_infinity=True)
@@ -48,5 +47,5 @@ for epoch in range(cfg.epoch):
     history['val_loss'].append(val_loss)
 
 loss_curve(history)
-torch.save(model.state_dict(), 'F:\\document\\14022\\ocr\\main\\weights\\model_weights.pth')
+torch.save(model.state_dict(), 'model_weights.pth')
 

@@ -1,6 +1,6 @@
 from torchvision.transforms.functional import resize
 from torchvision.io import read_image
-from _utils import show_img
+from Utils._utils import show_img
 import torch
 from torch.nn import functional as nnf
 import tqdm
@@ -57,7 +57,7 @@ def test(model, loss_fn, data_loader, epoch, device, converter, max_len):
 
 
 def prediction(model, img_dir, cfg, converter):
-    model.load_state_dict(torch.load("F:\\document\\14022\\ocr\\main\\weights\\model_weights.pth"))
+    model.load_state_dict(torch.load("path/to/model/weights"))
     model.eval()
 
     img = read_image(img_dir).float().to(cfg.device)
