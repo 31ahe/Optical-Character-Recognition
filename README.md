@@ -81,12 +81,12 @@ class OCR_Model(nn.Module):
 
 <p>To train the OCR model, you can follow these steps:</p>
 
-<ol>
-<li> Install Dependencies `$ pip install -r requirements.txt` </li>
-<li>Prepare your dataset and ensure it is compatible with the model input format.</li>
-<li>Define the model configuration and instantiate the OCR model.</li>
-<li>Train the model using your dataset and monitor the loss and accuracy metrics.</li>
-</ol>
+
+- Install Dependencies `$ pip install -r requirements.txt`
+- Prepare your dataset and ensure it is compatible with the model input format.
+- Define the model configuration and instantiate the OCR model.
+- Train the model using your dataset and monitor the loss and accuracy metrics.
+
 
 
 <h2>License</h2>
