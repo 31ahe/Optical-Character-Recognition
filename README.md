@@ -6,7 +6,8 @@
 
 <p>The feature extractor architecture consists of several convolutional layers followed by batch normalization, ReLU activation, and max-pooling operations. Here is the architecture of the feature extractor:</p>
 
-<pre><code>self.feature_extractor = nn.Sequential(
+```py
+self.feature_extractor = nn.Sequential(
     nn.Conv2d(1, 32, kernel_size=3, padding=1),
     nn.ReLU(True),
     nn.Conv2d(32, 64, kernel_size=3, stride=1, padding=1),
@@ -33,7 +34,8 @@
     nn.MaxPool2d((2, 1), (2, 1)),
 
     nn.Flatten(2)
-)</code></pre>
+)
+```
 
 <h2>Sequence Modeling</h2>
 
