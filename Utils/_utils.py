@@ -17,6 +17,7 @@ def loss_curve(history):
 
     plt.legend(['train'], loc = 'upper right')
     plt.show()
+    plt.savefig("model_history.png")
 
 
 def print_params(model):
