@@ -41,7 +41,8 @@ self.feature_extractor = nn.Sequential(
 
 <p>The sequence modeling component utilizes a bidirectional LSTM (BiLSTM) to capture sequential information from the features extracted by the CNN. Here is the architecture of the BiLSTM:</p>
 
-<pre><code>class BidirectionalLSTM(nn.Module):
+```py
+class BidirectionalLSTM(nn.Module):
 
     def __init__(self, input_size, hidden_size, output_size):
         super(BidirectionalLSTM, self).__init__()
@@ -53,13 +54,14 @@ self.feature_extractor = nn.Sequential(
         recurrent, _ = self.rnn(input)  # batch_size x T x input_size -&gt; batch_size x T x (2*hidden_size)
         output = self.linear(recurrent)  # batch_size x T x output_size
         return output
-</code></pre>
+```
 
 <h2>OCR Model</h2>
 
 <p>The OCR model combines the feature extractor and the sequence modeling components. It consists of the following architecture:</p>
 
-<pre><code>class OCR_Model(nn.Module):
+```py
+class OCR_Model(nn.Module):
     def __init__(self, num_classes):
         super(OCR_Model, self).__init__()
         self.feature_extractor = feature_extractor()
@@ -73,7 +75,7 @@ self.feature_extractor = nn.Sequential(
         features =  self.feature_extractor(x)
         lstm_out =  self.SequenceModeling(features)
         return self.linear(lstm_out)
-</code></pre>
+```
 
 <h2>Usage</h2>
 
@@ -82,29 +84,10 @@ self.feature_extractor = nn.Sequential(
 <ol>
 <li>Prepare your dataset and ensure it is compatible with the model input format.</li>
 <li>Define the model configuration and instantiate the OCR model.</li>
-<li>Define your loss function (e.g., CrossEntropyLoss) and optimizer (e.g., SGD or Adam).</li>
 <li>Train the model using your dataset and monitor the loss and accuracy metrics.</li>
-<li>Evaluate the trained model on a separate validation or test dataset to assess its performance.</li>
 </ol>
 
-<p>Feel free to customize the model architecture, hyperparameters, and training procedure according to your specific requirements.</p>
-
-<h2>Acknowledgments</h2>
-
-<p>The implementation in this repository is based on the work described in the following papers:</p>
-
-<ul>
-<li>[Add relevant papers or resources here]</li>
-</ul>
 
 <h2>License</h2>
 
 <p>This project is licensed under the MIT License - see the <a href="LICENSE">LICENSE</a> file for details.</p>
-
-<h2>Contributing</h2>
-
-<p>Contributions are welcome! Please feel free to open an issue or submit a pull request with your improvements.</p>
-
-<h2>Contact</h2>
-
-<p>For any questions or inquiries, please contact [your email address].</p>
