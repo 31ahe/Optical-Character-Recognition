@@ -7,8 +7,8 @@ def json_data_loader(data_dir):
         with open(os.path.join(data_dir, 'labels.json'), 'r', encoding='utf-8') as f:
             return json.load(f)
         
-train_path = 'F:\\document\\14022\\ocr\\mainDataSet\\OCRDSLargeLLLL\\train'
-test_path = 'F:\\document\\14022\\ocr\\mainDataSet\\OCRDSLargeLLLL\\test'
+train_path = 'path/to/mainDataSet/train'
+test_path = 'path/to/mainDataSet/test'
 
 train_label = json_data_loader(train_path)
 test_label = json_data_loader(test_path)

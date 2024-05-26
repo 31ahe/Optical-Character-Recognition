@@ -72,7 +72,10 @@ def prediction(model, img_dir, cfg, converter):
         preds_size = torch.IntTensor([preds.size(1)] * 1)
         _, preds_index = preds.max(2)
         preds_str = converter.decode(preds_index, preds_size)
+        reversed_preds_str = [s[::-1] for s in preds_str]
+
 
 
     print(preds_str)
+    print("reverse : ", reversed_preds_str)
 
