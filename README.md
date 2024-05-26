@@ -87,6 +87,9 @@ class OCR_Model(nn.Module):
 - Define the model configuration and instantiate the OCR model.
 - Train the model using your dataset and monitor the loss and accuracy metrics.
 
+<h2>Loss Curve</h2>
+<img src="images/loss.png" alt="Example OCR" style="max-width: 100%; height: auto;">
+
 
 
 <h2>License</h2>
