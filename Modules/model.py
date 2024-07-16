@@ -6,6 +6,7 @@ class OCR_Model(nn.Module):
     def __init__(self, num_classes):
         super(OCR_Model, self).__init__()
         self.feature_extractor = feature_extractor()
+        
         self.SequenceModeling = nn.Sequential(
             BidirectionalLSTM(512, 512, 512),
             BidirectionalLSTM(512, 512, 512)

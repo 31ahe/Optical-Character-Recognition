@@ -1,7 +1,6 @@
 from torch import nn
 import torch
 
-
 class feature_extractor(nn.Module):
     def __init__(self):
         super(feature_extractor, self).__init__()
