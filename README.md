@@ -90,7 +90,7 @@ class OCR_Model(nn.Module):
 <h2>Loss Curve</h2>
 <img src="images/loss.png" alt="Example OCR" style="max-width: 100%; height: auto;">
 
-<h2>Roc Curve</h2>
+<h2>ROC Curve</h2>
 <img src="images/ROC.png" alt="Example OCR" style="max-width: 100%; height: auto;">
 
 
