@@ -23,6 +23,5 @@ img_w = 192
 batch_size = 32
 learning_rate = 3e-4
 epoch = 10
-
 device = torch.device("cuda")
 
