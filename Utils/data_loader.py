@@ -21,7 +21,6 @@ class CustomDataset(Dataset):
 
         return image, label
 
-
 class normalization:
     def __call__(self, img):
         return (img - img.mean())/img.std()

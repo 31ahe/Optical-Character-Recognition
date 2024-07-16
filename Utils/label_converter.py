@@ -3,7 +3,6 @@ import torch
 class CTCLabelConverter(object):
     """ Convert between text-label and text-index """
 
-
     def __init__(self, character, device):
         # character (str): set of the possible characters.
         dict_character = list(character)

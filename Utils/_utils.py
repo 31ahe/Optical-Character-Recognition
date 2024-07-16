@@ -22,6 +22,7 @@ def loss_curve(history):
 
 def print_params(model):
     params_num = []
+    
     for p in filter (lambda p: p.requires_grad, model.parameters()):
         params_num.append(np.prod(p.size()))
 
