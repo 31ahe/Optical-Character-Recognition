@@ -15,7 +15,7 @@ test_label = json_data_loader(test_path)
 
 unique_chars = ''.join(np.unique(list(''.join(train_label.values()))))
 max_len = len(max(train_label.values(),key = lambda i:len(i)))
-# print(unique_chars)
+
 
 in_channels = 1
 img_h = 64
