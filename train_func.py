@@ -75,7 +75,6 @@ def prediction(model, img_dir, cfg, converter):
         reversed_preds_str = [s[::-1] for s in preds_str]
 
 
-
     print(preds_str)
     print("reverse : ", reversed_preds_str)
 

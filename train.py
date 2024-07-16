@@ -34,7 +34,6 @@ converter = CTCLabelConverter(cfg.unique_chars, cfg.device)
 
 model = OCR_Model(len(cfg.unique_chars)).to(cfg.device)
 
-
 optimizer = torch.optim.Adam(model.parameters(), cfg.learning_rate)
 loss_fn = nn.CTCLoss(zero_infinity=True)
 
